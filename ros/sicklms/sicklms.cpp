@@ -377,12 +377,15 @@ int main(int argc, char **argv)
         // depending on the mode. We want to stream out the data as
         // soon as we get it otherwise the timing won't work right to
         // reconstruct the data if the sensor is moving.
-        sick_lms.GetSickPartialScan(range_values, n_range_values,
+/*        sick_lms.GetSickPartialScan(range_values, n_range_values,
                                     partial_scan_index);
         double partialScanOffset = 0.25 * partial_scan_index;
         angle_min = (-90.0 + angle_offset + partialScanOffset) * M_PI / 180.0;
         angle_max = (90.0 - angle_offset - fmod(1.0 - partialScanOffset, 1.0))
-          * M_PI / 180.0;
+          * M_PI / 180.0;*/
+	sick_lms.GetSickScan(range_values, n_range_values);
+        angle_min = (-90.0 + angle_offset) * M_PI / 180.0;
+        angle_max = (90.0 - angle_offset)  * M_PI / 180.0;
       }
       // Figure out the time that the scan started. Since we just
       // fished receiving the data, we'll assume that the mirror is at
