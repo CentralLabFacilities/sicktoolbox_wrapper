@@ -90,9 +90,9 @@ void publish_scan(diagnostic_updater::DiagnosedPublisher<sensor_msgs::LaserScan>
     case 8186: // Erorr when reading channel 1
       scan_msg.ranges[i] = numeric_limits<float>::quiet_NaN();
       break;
-    case 8183: // Measured value > maximum Value
-      scan_msg.ranges[i] = numeric_limits<float>::infinity();
-      break;
+    //case 8183: // Measured value > maximum Value
+     // scan_msg.ranges[i] = numeric_limits<float>::infinity();
+    //  break;
     ///< The following are commented out until I verify if 16m and 32m operation are used.
     /*// 16m operation
     case 16383: // Measurement not valid
@@ -338,7 +338,7 @@ int main(int argc, char **argv)
                  "field of view.");
       }
     }
-
+	ROS_WARN("You a using the version!");
     // The increment for the slower LMS is still 1.0 even if its set to
     // 0.5 or 0.25 degrees resolution because it is interleaved. So for
     // 0.5 degrees, two scans are needed, offset by 0.5 degrees. These
