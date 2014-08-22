@@ -338,7 +338,7 @@ int main(int argc, char **argv)
                  "field of view.");
       }
     }
-	ROS_WARN("You a using the version!");
+	ROS_WARN("You a using the version -> git 2.0!");
     // The increment for the slower LMS is still 1.0 even if its set to
     // 0.5 or 0.25 degrees resolution because it is interleaved. So for
     // 0.5 degrees, two scans are needed, offset by 0.5 degrees. These
